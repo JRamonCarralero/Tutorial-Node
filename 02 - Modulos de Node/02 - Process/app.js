@@ -1,3 +1,6 @@
+// Modulo de process
+// El modulo de process nos permite acceder a la informacion del proceso
+
 console.log(process)
 console.log(process.env)    // variables de entorno
 console.log(process.argv)   // argumentos de la consola, es un array, si en la consola, a node app.js le añadimos argumentos, podemos acceder a ellos con process.argv[indice]
