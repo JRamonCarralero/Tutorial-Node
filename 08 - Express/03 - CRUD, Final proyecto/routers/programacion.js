@@ -38,7 +38,7 @@ routerProgramacion.get("/:tema/:nivel", (req, res) => {
     if (resultado.length > 0) {
         res.json(resultado);
     } else {
-        res.status(404).json({error: `No se encontraron cursos de ${tema} de nivel ${nivel}`}); // status(404) incluimos el status
+        res.status(204).json({error: `No se encontraron cursos de ${tema} de nivel ${nivel}`}); // status(404) incluimos el status
     }
 });
 
@@ -58,7 +58,7 @@ routerProgramacion.put("/:id", (req, res) => {
         programacion[index] = nuevoCurso;
         res.json(programacion);
     } else {
-        res.status(404).json({error: `No se encontraron cursos con el id ${id}`}); // status(404) incluimos el status
+        res.status(204).json({error: `No se encontraron cursos con el id ${id}`}); // status(404) incluimos el status
     }
 });
 
