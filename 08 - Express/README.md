@@ -118,7 +118,7 @@ app.use("/api/cursos/programacion", routerProgramacion);
 
 ## Middlewares
 
-Las funciones que se ejecutan antes de la ruta, se llaman middlewares, son como un intermediario entre la ruta y el callback. 
+Las funciones que se ejecutan antes de la ruta, se llaman middlewares, son como un intermediario entre la ruta y el callback.
 
 Por ejemplo:
 
