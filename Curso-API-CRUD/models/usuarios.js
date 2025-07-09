@@ -12,7 +12,7 @@ class usuariosModel {
     }
 
     async getOne(id) {
-        return await Usuario.findById({_id: new mongoose.types.ObjectId(id)});
+        return await Usuario.findById({_id: new mongoose.Types.ObjectId(id)});
     }
 
     async getOneByMail(email) {
@@ -20,11 +20,11 @@ class usuariosModel {
     }
 
     async update(id, usuario) {
-        return await Usuario.findOneAndUpdate({_id: new mongoose.types.ObjectId(id)}, usuario, {new: true});
+        return await Usuario.findOneAndUpdate({_id: new mongoose.Types.ObjectId(id)}, usuario, {new: true});
     }
 
     async delete(id) {
-        return await Usuario.findOneAndDelete({_id: new mongoose.types.ObjectId(id)});
+        return await Usuario.findOneAndDelete({_id: new mongoose.Types.ObjectId(id)});
     }
 }
 

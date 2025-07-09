@@ -12,15 +12,15 @@ class mascotasModel {
     }
 
     async getOne(id) {
-        return await Mascota.findById({_id: new mongoose.types.ObjectId(id)});
+        return await Mascota.findById({_id: new mongoose.Types.ObjectId(id)});
     }
 
     async update(id, mascota) {
-        return await Mascota.findOneAndUpdate({_id: new mongoose.types.ObjectId(id)}, mascota, {new: true});
+        return await Mascota.findOneAndUpdate({_id: new mongoose.Types.ObjectId(id)}, mascota, {new: true});
     }
 
     async delete(id) {
-        return await Mascota.findOneAndDelete({_id: new mongoose.types.ObjectId(id)});
+        return await Mascota.findOneAndDelete({_id: new mongoose.Types.ObjectId(id)});
     }
 }
 
