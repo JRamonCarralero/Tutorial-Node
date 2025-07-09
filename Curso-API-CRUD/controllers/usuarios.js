@@ -1,5 +1,7 @@
 import usuariosModel from '../models/usuarios.js';
 import bcrypt from 'bcrypt';
+import jsonwebtoken from 'jsonwebtoken';
+import { generarToken } from '../helpers/autenticacion.js';
 
 class usuariosController {
     constructor() {}
@@ -32,7 +34,10 @@ class usuariosController {
         if (!claveValida) {
             return res.status(400).json({ error: 'La clave es incorrecta' });
         }
-        res.status(200).json({ message: 'Inicio de sesión exitoso' });
+
+        const token = generarToken(email);
+
+        res.status(200).json({ message: 'Inicio de sesión exitoso', token });
     }
 }
 
