@@ -1,22 +1,26 @@
-import { MongoClient } from "mongodb";
+import mongoose from "mongoose";
 import 'dotenv/config'; 
 
+/*
+  Utilizamos mongoose como herramienta para conectarnos a la base de datos
+*/
 class dbClient {
     constructor() {
-        const queryString = process.env.MONGO_URL;
-        this.client = new MongoClient(queryString);
-        this.conectarDB();
+        this.conectarBaseDatos();
     }
 
-    async conectarDB() {
+    async conectarBaseDatos() {
+        const queryString = process.env.MONGO_URL;
+        await mongoose.connect(queryString);
+    }
+
+    async cerrarConexion() {
         try {
-            await this.client.connect();
-            this.db = this.client.db('adopcion');
-            console.log("Conectado a la base de datos");
+            await mongoose.disconnect();
         } catch (error) {
             console.log(error);
         }
     }
 }
 
-export default new dbClient;
+export default new dbClient();

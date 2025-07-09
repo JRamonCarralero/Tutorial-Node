@@ -2,6 +2,7 @@ import express from 'express';
 import 'dotenv/config';  // Para poder usar las variables de entorno
 import routeMascotas from './routes/mascotas.js';
 import bodyParser from 'body-parser';
+import dbClient from './config/dbClient.js';
 
 const app = express();
 
@@ -18,3 +19,8 @@ try {
 } catch (error) {
     console.log(error);
 }
+
+process.on('SIGINT', async () => {
+    await dbClient.cerrarConexion();
+    process.exit(0);
+});

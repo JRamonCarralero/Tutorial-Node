@@ -1,7 +1,6 @@
 # Curso API CRUD
 
-Curso API CRUD de FreeCodeCamp de Node.js, Express, MongoDB y Autenticación (JWT).
-
+Curso API CRUD de FreeCodeCamp de Node.js, Express, MongoDB, Mongoose y Autenticación (JWT).
 
 ## Estructura de la aplicación
 
