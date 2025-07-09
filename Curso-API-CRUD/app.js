@@ -1,6 +1,7 @@
 import express from 'express';
 import 'dotenv/config';  // Para poder usar las variables de entorno
 import routeMascotas from './routes/mascotas.js';
+import routeUsuarios from './routes/usuarios.js';
 import bodyParser from 'body-parser';
 import dbClient from './config/dbClient.js';
 
@@ -9,7 +10,8 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use('/mascotas', routeMascotas);
+app.use('/pets', routeMascotas);
+app.use('/users', routeUsuarios);
 
 try {
     const PORT = process.env.PORT || 3000;
